@@ -159,6 +159,13 @@ ENV/
 env.bak/
 venv.bak/
 
+# Project data generated or extracted locally
+data/raw/*
+data/processed/*
+
+# Windows download metadata copied into WSL
+*:Zone.Identifier
+
 # Spyder project settings
 .spyderproject
 .spyproject
