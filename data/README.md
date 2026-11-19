@@ -9,7 +9,7 @@
 | Nguồn gốc | Dữ liệu tai nạn giao thông của thành phố Chicago (Mỹ), bộ *Traffic Crashes – Crashes* trên cổng dữ liệu mở [data.cityofchicago.org](https://data.cityofchicago.org/d/85ca-t3if) |
 | Giấy phép | Kaggle ghi *Other (specified in description)* nhưng phần mô tả không nêu cụ thể. Dữ liệu gốc do thành phố Chicago công bố công khai (xem Terms of Use của cổng dữ liệu) |
 | Kích thước | 209.306 dòng × 24 cột |
-| Thời gian | 2015 – 01/2025 |
+| Thời gian | 03/03/2013 – 18/01/2025. Giai đoạn so sánh chính là 2018–2024. |
 
 ## Nhóm cột
 
@@ -19,6 +19,8 @@
 - **Thương vong:** `most_severe_injury`, `injuries_total`, `injuries_fatal`, `injuries_incapacitating`, `injuries_non_incapacitating`, `injuries_reported_not_evident`, `injuries_no_indication`
 
 ## Cách đọc dữ liệu
+
+Khi chạy [notebook 01](../notebooks/01_collection_exploration.ipynb), ZIP được giải nén vào `data/raw/` nếu chưa có CSV. Notebook tạo dữ liệu sạch trong `data/processed/`. Q3 sử dụng thêm [dữ liệu thời tiết trạm O’Hare của NOAA](reference/ohare_ghcn_daily_2018_2024.csv).
 
 File CSV gốc nặng 51 MB, vượt giới hạn 25 MB khi tải lên GitHub qua web, nên được nén thành `.zip`. Pandas đọc thẳng file zip, không cần giải nén:
 

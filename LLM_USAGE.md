@@ -17,3 +17,15 @@
 - **Request:** Complete the Q1 and Q2 analysis of the shared Chicago crash snapshot.
 - **Assistance used:** Codex extended the analysis notebook, checked the DST rule against NIST, implemented the added comparisons and robustness checks, verified the executed results, and drafted the interpretation for review.
 - **Student review:** Pending. The Q1 and Q2 analysis and interpretation include AI contributions.
+
+## 2026-11-20 - Codex (Q3-Q6)
+
+- **Request:** Prepare the Q3-Q6 notebook drafts from the team's question assignments and verify them against the processed crash snapshot.
+- **Assistance used:** Codex obtained the NOAA station subset, wrote and executed the Q3-Q6 analysis code, generated plots, and drafted results and limitations. The Q4 draft used time-only inputs and a chronological holdout.
+- **Student review:** Pending. This draft records AI contributions and does not claim that the question owners authored or reviewed them.
+
+## 2026-11-20 - Codex (README and presentation)
+
+- **Request:** Complete the project README and prepare the fifteen-minute presentation PDF.
+- **Assistance used:** Codex documented the notebook workflow, checked public references, and summarized the saved Q1-Q6 results in the README and slide deck. The slide charts use values from notebook outputs.
+- **Student review:** Pending. Presenters should check the figures and explain their own analysis in their own words.
