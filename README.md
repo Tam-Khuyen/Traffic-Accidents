@@ -29,8 +29,8 @@ Nhóm khảo sát dữ liệu tai nạn ghi nhận ở Chicago và phân tích s
 | Q2 | Trong khung 16:00–18:59, số vụ trong bóng tối và tỷ lệ có thương tích thay đổi thế nào giữa 14 ngày trước và sau khi kết thúc DST? | [Q1–Q2](notebooks/02_analysis_q1_q2.ipynb) |
 | Q3 | Mưa và tuyết gắn với tỷ lệ thương tích thế nào trong các nhóm mặt đường và ánh sáng tương đương? Nhãn trong biên bản khớp với số đo O’Hare đến mức nào? | [Q3](notebooks/02_analysis_q3.ipynb) |
 | Q4 | Giờ, thứ và tháng có đủ để dự đoán vụ có thương tích trong một kịch bản giả định lúc nhận tin? | [Q4 — Machine Learning](notebooks/03_ml_question.ipynb) |
-| Q5 | Các nhóm nguyên nhân được ghi nhận nào có tỷ lệ thương tích nặng cao? Thứ hạng thay đổi thế nào theo loại va chạm và tiêu chí lọc? | [Q5–Q6](notebooks/02_analysis_q5_q6.ipynb) |
-| Q6 | Tỷ lệ thương tích nặng ở giao lộ khác nhau thế nào theo thiết bị điều khiển, ngày/đêm và loại va chạm? | [Q5–Q6](notebooks/02_analysis_q5_q6.ipynb) |
+| Q5 | Nhóm nguyên nhân chính nào có tỷ lệ thương tích nặng (tử vong hoặc mất khả năng hoạt động) cao bất thường? Thứ hạng có giữ nguyên sau khi chuẩn hóa theo loại va chạm và khi đổi giai đoạn hoặc định nghĩa kết quả? | [Q5–Q6](notebooks/02_analysis_q5_q6.ipynb) |
+| Q6 | Ở giao lộ, tỷ lệ thương tích nặng khác nhau thế nào giữa đèn tín hiệu, biển stop/đèn nháy và không có thiết bị, theo ánh sáng ngày/đêm và loại va chạm? | [Q5–Q6](notebooks/02_analysis_q5_q6.ipynb) |
 
 ## Công trình công khai liên quan
 
@@ -44,7 +44,8 @@ Nhóm khảo sát dữ liệu tai nạn ghi nhận ở Chicago và phân tích s
 2. **Q2 — Phát hiện bất ngờ nhất.** Số vụ trong bóng tối tăng từ 451 lên 1.036 sau đổi giờ, cao hơn ở cả bảy năm. Số vụ giờ cao điểm tính trên mọi điều kiện ánh sáng chỉ tăng từ 1.517 lên 1.631. Chênh lệch tỷ lệ có thương tích là −2,17 điểm phần trăm (KTC 95% −7,19 đến +2,64).
 3. **Q3 — Kết quả về mưa nhạy với trọng số.** Ghép đủ 181.051 bản ghi theo ngày. Chênh lệch tỷ lệ có thương tích giữa mưa và quang đãng là +1,38 điểm phần trăm khi ưu tiên các nhóm có dữ liệu ở cả hai điều kiện. Ước lượng đổi thành −3,94 điểm phần trăm với trọng số theo tổng số bản ghi của mỗi nhóm.
 4. **Q4 — Mô hình theo giờ và lịch cải thiện ít so với baseline.** Logistic Regression đạt AP 0,322 so với 0,286 của baseline trên tập kiểm tra 2023–2024. Ở ngưỡng chọn từ validation, mô hình phát hiện 86,94% ca có thương tích và gắn cờ gần 85 trên 100 vụ, chưa đủ cơ sở cho ứng dụng điều phối.
-5. **Q5–Q6 — Thứ hạng phụ thuộc nhóm so sánh.** Trong các nhãn có ít nhất 500 bản ghi, tình trạng thể chất của tài xế có tỷ lệ thương tích nặng cao nhất (11,85%). Thứ hạng thay đổi theo loại va chạm. Tại giao lộ, tỷ lệ chuẩn hóa là 3,83% với đèn tín hiệu, 2,80% với biển stop/đèn nháy và 3,45% khi không có thiết bị. Thứ tự giữa các thiết bị thay đổi trong từng nhóm va chạm.
+5. **Q5 — Tài xế bị suy giảm năng lực, lái ẩu và tốc độ dẫn đầu về mức độ nặng.** Sau khi chuẩn hóa theo loại va chạm, tỷ lệ thương tích nặng là 12,64% với nhóm tài xế bị suy giảm năng lực (rượu bia, chất kích thích, thể chất), 6,34% với lái ẩu/ngược chiều và 5,47% với tốc độ, so với 1,27% của lỗi thao tác thông thường. Thứ hạng giữ nguyên khi dùng toàn bộ giai đoạn 2013–2025 (Spearman ρ = 1,00). "Không nhường đường" giảm từ 4,49% xuống 3,45% vì 12,3% các vụ này có người đi bộ hoặc xe đạp.
+6. **Q6 — Biển stop gắn với ít ca nặng hơn, nhưng kết quả phụ thuộc loại va chạm.** Trong cùng loại va chạm và điều kiện ánh sáng, odds thương tích nặng ở biển stop thấp hơn 15% so với giao lộ không có thiết bị (OR 0,85; KTC 95% 0,78–0,94). Với người đi bộ và xe đạp, giao lộ không có thiết bị nặng nhất (18,48%). Với va chạm góc và rẽ, đèn tín hiệu cao nhất (3,58%). Trời tối làm tỷ lệ ở đèn tín hiệu tăng từ 3,06% lên 4,55%.
 
 ### Hạn chế và hướng phát triển
 
